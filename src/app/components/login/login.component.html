@@ -1,0 +1,24 @@
+<div class="body ">
+    <h2 class="text-center">Sign Up</h2>
+    <form #f="ngForm" (ngSubmit)="logIn(f)">
+
+        
+
+
+        <input ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="Email" required email>
+        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">Email is required</div>
+        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email"> youe input does not match email format</div>
+
+        
+        <input  ngModel name="password" type="password" #p="ngModel" class="form-control" placeholder="password" required minlength="6">
+        <div class="alert alert-danger" *ngIf="p.touched && p.errors?.required">password is required</div>
+        <div class="alert alert-danger" *ngIf="p.touched && p.errors?.minlength">password is wrong</div>
+
+        
+        
+
+
+        <button class="btn btn-primary"  >Log In</button>
+
+    </form>
+</div>
